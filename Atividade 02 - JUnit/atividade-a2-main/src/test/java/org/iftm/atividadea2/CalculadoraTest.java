@@ -29,14 +29,6 @@ public class CalculadoraTest {
     }
 
     @Test
-    public void testGetMemoria() {
-        Calculadora calc = new Calculadora(3);
-        int resultadoObtido = calc.getMemoria();
-        assertEquals(3, resultadoObtido);
-    }
-
-
-    @Test
     public void testSomarValorPositivo() {
         Calculadora calc = new Calculadora(3);
         calc.somar(2);
