@@ -1,0 +1,96 @@
+{
+  "id": "cadastrar-vet-simple",
+  "version": "2.0",
+  "name": "CadastrarVeterinario",
+  "url": "http://localhost:8080",
+  "tests": [{
+    "id": "test-cadastro-simples",
+    "name": "Cadastrar Veterinario",
+    "commands": [{
+      "id": "1",
+      "command": "open",
+      "target": "/form",
+      "value": ""
+    }, {
+      "id": "2",
+      "command": "assertText",
+      "target": "css=h1",
+      "value": "Cadastrar novo veterinário"
+    }, {
+      "id": "3",
+      "command": "assertValue",
+      "target": "id=nome",
+      "value": ""
+    }, {
+      "id": "4",
+      "command": "type",
+      "target": "id=nome",
+      "value": "Dr. João Silva"
+    }, {
+      "id": "5",
+      "command": "assertValue",
+      "target": "id=nome",
+      "value": "Dr. João Silva"
+    }, {
+      "id": "6",
+      "command": "type",
+      "target": "id=inputEmail",
+      "value": "joao@vet.com"
+    }, {
+      "id": "7",
+      "command": "assertValue",
+      "target": "id=inputEmail",
+      "value": "joao@vet.com"
+    }, {
+      "id": "8",
+      "command": "type",
+      "target": "id=inputEspecialidade",
+      "value": "Cirurgia"
+    }, {
+      "id": "9",
+      "command": "assertValue",
+      "target": "id=inputEspecialidade",
+      "value": "Cirurgia"
+    }, {
+      "id": "10",
+      "command": "type",
+      "target": "id=inputSalario",
+      "value": "5000"
+    }, {
+      "id": "11",
+      "command": "assertValue",
+      "target": "id=inputSalario",
+      "value": "5000"
+    }, {
+      "id": "12",
+      "command": "click",
+      "target": "css=button[type='submit']",
+      "value": ""
+    }, {
+      "id": "13",
+      "command": "waitForElementPresent",
+      "target": "css=table.table",
+      "value": "5000"
+    }, {
+      "id": "14",
+      "command": "assertText",
+      "target": "css=h1",
+      "value": "Veterinarios"
+    }, {
+      "id": "15",
+      "command": "assertElementPresent",
+      "target": "css=table.table tr td",
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "suite-simples",
+    "name": "Testes Simples",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["test-cadastro-simples"]
+  }],
+  "urls": ["http://localhost:8080"],
+  "plugins": []
+}
