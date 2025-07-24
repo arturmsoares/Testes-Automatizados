@@ -1,0 +1,51 @@
+{
+  "id": "listar-vet-simple",
+  "version": "2.0",
+  "name": "ListarVeterinario",
+  "url": "http://localhost:8080",
+  "tests": [{
+    "id": "test-listagem-simples",
+    "name": "Listar Veterinarios",
+    "commands": [{
+      "id": "1",
+      "command": "open",
+      "target": "/home",
+      "value": ""
+    }, {
+      "id": "2",
+      "command": "assertText",
+      "target": "css=h1",
+      "value": "Veterinarios"
+    }, {
+      "id": "3",
+      "command": "assertElementPresent",
+      "target": "css=table.table",
+      "value": ""
+    }, {
+      "id": "4",
+      "command": "assertElementPresent",
+      "target": "css=th",
+      "value": ""
+    }, {
+      "id": "5",
+      "command": "assertElementPresent",
+      "target": "linkText=Adicionar",
+      "value": ""
+    }, {
+      "id": "6",
+      "command": "assertElementPresent",
+      "target": "linkText=Consultar",
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "suite-listagem",
+    "name": "Testes Listagem",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["test-listagem-simples"]
+  }],
+  "urls": ["http://localhost:8080"],
+  "plugins": []
+}
